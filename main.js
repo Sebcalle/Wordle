@@ -43,18 +43,16 @@ async function main() {
         "00000",
         "00000",
     ]
-    //let palabra = pedirPalabra();
-    //palabra = palabra.toUpperCase();
-    //verificarPalabra("TONTE");
-    for(let i=0;i<6;i++) {
+    let intento = 0;
+    for(let palabra;intento<6 && palabra != palabraCorrecta;intento++) {
         imprimirTabla(tabla);
-        let palabra = pedirPalabra();
+        palabra = pedirPalabra();
         palabra = palabra.toUpperCase();
-        tabla[i] = palabra;
+        tabla[intento] = palabra;
         console.clear();
     }
     imprimirTabla(tabla);
-    //console.clear(); //Limpia la consola
+    console.log(`Felicidades! Gano en el intento número #${intento}.`);
 }
 
 main();
